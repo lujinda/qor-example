@@ -26,12 +26,14 @@ import (
 	"github.com/qor/render"
 	"github.com/qor/session/manager"
 	"github.com/qor/widget"
+	"gopkg.in/webpack.v0"
 )
 
 func main() {
 	cmdLine := flag.NewFlagSet(os.Args[0], flag.ContinueOnError)
 	compileTemplate := cmdLine.Bool("compile-templates", false, "Compile Templates")
 	cmdLine.Parse(os.Args[1:])
+	webpack.Init(true)
 
 	mux := http.NewServeMux()
 	mux.Handle("/", routes.Router())
