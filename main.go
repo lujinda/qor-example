@@ -66,6 +66,8 @@ func main() {
 			return manager.SessionManager.Flashes(req)
 		}
 
+		funcMap["asset"] = webpack.AssetHelper
+
 		// Add `action_bar` method
 		funcMap["render_action_bar"] = func() template.HTML {
 			return admin.ActionBar.Actions(action_bar.Action{Name: "Edit SEO", Link: seo.SEOCollection.SEOSettingURL("/help")}).Render(w, req)
