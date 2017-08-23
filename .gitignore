@@ -42,7 +42,7 @@ harp.json
 tmp/*
 
 node_modules/
-public/assets/
+frontend/dist/
 *.js.map
 *.css.map
 npm-debug.log

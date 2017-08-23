@@ -43,7 +43,7 @@ var config = {
 
   module: {
     rules: [
-      { test: /\.es6/, use: "babel-loader" },
+      { test: /\.es6|\.js/, use: "babel-loader" },
       { test: /\.(jpe?g|png|gif)$/i, use: "file-loader" },
       {
         test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
@@ -60,7 +60,7 @@ var config = {
     // that all webpacked assets start with webpack/
 
     // must match config.webpack.output_dir
-    path: path.join(__dirname, "public", "frontend"),
+    path: path.join(__dirname, "frontend", "dist"),
     publicPath: "/frontend/",
 
     filename: production ? "[name]-[chunkhash].js" : "[name].js"

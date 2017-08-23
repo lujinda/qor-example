@@ -1,5 +1,7 @@
 "use strict";
 
+import $ from "jquery";
+
 $(function() {
   let $qty = $(".products__meta--qty");
   $qty.find("a.reduce").on("click", function(event) {
