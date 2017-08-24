@@ -1,6 +1,7 @@
 "use strict";
 
 import $ from "jquery";
+require("flexslider");
 
 $(function() {
   let $qty = $(".products__meta--qty");
@@ -67,5 +68,21 @@ $(function() {
       controlNav: false,
       itemWidth: 200,
       itemMargin: 16
+    });
+
+  $(".footer__change-language select").on("change", function() {
+    var url = $(this).val();
+    if (url) {
+      window.location = url;
+    }
+    return false;
+  });
+
+  $(".flexslider").length &&
+    $(".flexslider").flexslider({
+      animation: "slide",
+      touch: true,
+      directionNav: false,
+      smoothHeight: true
     });
 });

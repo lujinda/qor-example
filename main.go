@@ -33,7 +33,7 @@ func main() {
 	cmdLine := flag.NewFlagSet(os.Args[0], flag.ContinueOnError)
 	compileTemplate := cmdLine.Bool("compile-templates", false, "Compile Templates")
 	cmdLine.Parse(os.Args[1:])
-	webpack.Init(true)
+	webpack.Init(false)
 
 	mux := http.NewServeMux()
 	mux.Handle("/", routes.Router())

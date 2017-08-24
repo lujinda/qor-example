@@ -49,6 +49,7 @@ npm-debug.log
 
 config/*.yml
 public/microsites/*
+public/webpack/
 vendor/*
 .DS_Store
 

@@ -1,6 +1,4 @@
-require("javascripts/products.js");
-require("javascripts/footer.js");
+require("javascripts/main.js");
 
 require("stylesheets/qor.scss");
 require("stylesheets/home_banner.scss");
-require("stylesheets/home_products.scss");

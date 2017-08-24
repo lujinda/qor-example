@@ -12,6 +12,15 @@ Chat Room: [![Join the chat at https://gitter.im/qor/qor](https://badges.gitter.
 # Get example app
 $ go get -u github.com/qor/qor-example
 
+# Setup frontend
+$ npm install webpack webpack-dev-server -g
+$ cd $GOPATH/src/github.com/qor/qor-example
+$ npm install
+for dev
+$ npm run dev
+for prod
+$ npm run prod
+
 # Setup database
 $ mysql -uroot -p
 mysql> CREATE DATABASE qor_example;

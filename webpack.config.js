@@ -16,20 +16,12 @@ var devServerPort = 3808;
 var production = process.env.NODE_ENV === "production";
 
 const extractSass = new ExtractTextPlugin({
-  filename: "[name].[contenthash].css",
-  disable: !production
+  filename: production ? "[name].[contenthash].css" : "[name].css"
 });
 
 var sassExtractor = () => {
   return extractSass.extract({
-    use: [
-      {
-        loader: "css-loader"
-      },
-      {
-        loader: "sass-loader"
-      }
-    ],
+    use: [{ loader: "css-loader" }, { loader: "sass-loader" }],
     fallback: "style-loader"
   });
 };
@@ -37,8 +29,7 @@ var sassExtractor = () => {
 var config = {
   entry: {
     // Sources are expected to live in $app_root/webpack
-    vendor: ["babel-polyfill"],
-    application: "app.js"
+    qor: "app.js"
   },
 
   module: {
@@ -88,10 +79,6 @@ var config = {
 
 if (production) {
   config.plugins.push(
-    new webpack.optimize.CommonsChunkPlugin({
-      name: "vendor",
-      filename: "vendor-[chunkhash].js"
-    }),
     new webpack.optimize.UglifyJsPlugin({
       compressor: { warnings: false },
       sourceMap: false
@@ -109,13 +96,7 @@ if (production) {
     })
   );
 } else {
-  config.plugins.push(
-    new webpack.optimize.CommonsChunkPlugin({
-      name: "vendor",
-      filename: "vendor.js"
-    }),
-    new webpack.NamedModulesPlugin()
-  );
+  config.plugins.push(new webpack.NamedModulesPlugin());
 
   config.devServer = {
     port: devServerPort,

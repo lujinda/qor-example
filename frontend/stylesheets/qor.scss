@@ -40,5 +40,8 @@ Qor frontend CSS className use BEM (http://getbem.com/introduction/)
 @import "layout/footer";
 @import "layout/main";
 
+/* plugin */
+@import "plugin/flexslider";
+
 /* mobile layout */
 @import "layout/mobile";
