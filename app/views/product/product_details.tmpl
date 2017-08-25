@@ -1,6 +1,3 @@
-<link type="text/css" rel="stylesheet" href="/vendors/flexslider.css" />
-<link type="text/css" rel="stylesheet" href="/dist/home_products.css" />
-
 <div class="container">
   {{with .CurrentColorVariation }}
     <form class="products__details" id="products__details">
@@ -8,19 +5,13 @@
         <div class="grid__col is-5 products__gallery">
 
           <div class="swiper-container products__gallery--top">
-            <ul class="slides">
+            <div class="swiper-wrapper slides">
               {{range $image := .Images.Files}}
-                <li style="background-image:url({{$image.URL}})"></li>
+                <div class="swiper-slide" style="background-image:url({{$image.URL}})"></div>
               {{end}}
-            </ul>
-          </div>
-
-          <div class="swiper-container products__gallery--thumbs">
-            <ul class="slides">
-              {{range $image := .Images.Files}}
-                <li style="background-image:url({{$image.URL}})"></li>
-              {{end}}
-            </ul>
+            </div>
+            <div class="swiper-button-next swiper-button-white"></div>
+            <div class="swiper-button-prev swiper-button-white"></div>
           </div>
         </div>
 
@@ -105,16 +96,16 @@
   <div class="row products__featured">
     <h3>{{ t "product.recommendations" }}</h3>
     <p>{{ t "product.recommendations_note" }}</p>
-    <div class="products__featured--slider" id="featured-product">
-      <ul class="products__list slides">
+    <div class="swiper-container products__featured--slider" id="featured-product">
+      <div class="swiper-wrapper products__list slides">
         {{range $product := related_products .CurrentColorVariation}}
-          <li>
+          <div class="swiper-slide">
             <a href="{{.DefaultPath}}" class="products__list--img"><img src="{{.MainImageURL}}" /></a>
             <a class="products__list--title" href="{{.DefaultPath}}">{{.Name}}</a>
             <p class="products__list--price" href="{{.DefaultPath}}"><span class="item_price">${{.Price}}</span></p>
-          </li>
+          </div>
         {{end}}
-      </ul>
+      </div>
     </div>
   </div>
   <!-- end: featured product widget -->
@@ -123,20 +114,18 @@
   <div class="row products__featured">
     <h3>{{ t "product.also_bought" }}</h3>
     <p>{{ t "product.also_bought_note" }}</p>
-    <div class="products__featured--slider" id="also-bought">
-      <ul class="products__list slides">
+    <div class="swiper-container products__featured--slider" id="also-bought">
+      <div class="swiper-wrapper products__list slides">
         {{range $product := other_also_bought .CurrentColorVariation}}
-          <li>
+          <div class="swiper-slide">
             <a href="{{.DefaultPath}}" class="products__list--img"><img src="{{.MainImageURL}}" /></a>
             <a class="products__list--title" href="{{.DefaultPath}}">{{.Name}}</a>
             <p class="products__list--price" href="{{.DefaultPath}}"><span class="item_price">${{.Price}}</span></p>
-          </li>
+          </div>
         {{end}}
-      </ul>
+      </div>
     </div>
   </div>
 
   <!-- end: featured product widget -->
 </div>
-
-<script src="/vendors/jquery.flexslider-min.js"></script>

@@ -35,13 +35,12 @@ Qor frontend CSS className use BEM (http://getbem.com/introduction/)
 @import "modules/lists";
 
 /* Layout */
-@import "layout/fonts";
 @import "layout/header";
 @import "layout/footer";
 @import "layout/main";
 
 /* plugin */
-@import "plugin/flexslider";
+@import "plugin/swiper";
 
 /* mobile layout */
 @import "layout/mobile";

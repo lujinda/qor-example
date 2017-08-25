@@ -270,7 +270,7 @@ body {
     }
 }
 .products__gallery--top {
-    .slides li {
+    .slides > div {
         height: 600px;
         width: 100%;
         background-size: cover;
