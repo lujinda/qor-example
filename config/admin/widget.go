@@ -68,9 +68,12 @@ func initWidgets() {
 			},
 		})
 
+		type banner struct {
+			Value string
+		}
 		// Banner Editor
 		type bannerEditorArgument struct {
-			Value string
+			Banners []banner
 		}
 		type subHeaderSetting struct {
 			Text  string
@@ -195,7 +198,8 @@ func initWidgets() {
 
 		// full width banner editor
 		fullwidthBannerEditorResource := Admin.NewResource(&bannerEditorArgument{})
-		fullwidthBannerEditorResource.Meta(&admin.Meta{Name: "Value", Config: &banner_editor.BannerEditorConfig{
+		slideBanners := fullwidthBannerEditorResource.Meta(&admin.Meta{Name: "Banners"}).Resource
+		slideBanners.Meta(&admin.Meta{Name: "Value", Config: &banner_editor.BannerEditorConfig{
 			MediaLibrary: Admin.GetResource("MediaLibrary"),
 		}})
 
