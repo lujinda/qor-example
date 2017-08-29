@@ -1,7 +1,6 @@
 package admin
 
 import (
-	"errors"
 	"fmt"
 	"net/http"
 
@@ -14,7 +13,6 @@ import (
 	"github.com/qor/qor"
 	"github.com/qor/qor-example/app/models"
 	"github.com/qor/qor-example/db"
-	"github.com/qor/qor/resource"
 	"github.com/qor/sorting"
 	"github.com/qor/widget"
 )
@@ -47,6 +45,9 @@ func initWidgets() {
 
 		Admin.AddResource(Widgets)
 
+		Widgets.RegisterFuncMap("Raw", func(val string) template.HTML {
+			return template.HTML(val)
+		})
 		// Top Banner
 		type bannerArgument struct {
 			Title           string
@@ -68,12 +69,9 @@ func initWidgets() {
 			},
 		})
 
-		type banner struct {
-			Value string
-		}
 		// Banner Editor
 		type bannerEditorArgument struct {
-			Banners []banner
+			Value string
 		}
 		type subHeaderSetting struct {
 			Text  string
@@ -198,8 +196,7 @@ func initWidgets() {
 
 		// full width banner editor
 		fullwidthBannerEditorResource := Admin.NewResource(&bannerEditorArgument{})
-		slideBanners := fullwidthBannerEditorResource.Meta(&admin.Meta{Name: "Banners"}).Resource
-		slideBanners.Meta(&admin.Meta{Name: "Value", Config: &banner_editor.BannerEditorConfig{
+		fullwidthBannerEditorResource.Meta(&admin.Meta{Name: "Value", Config: &banner_editor.BannerEditorConfig{
 			MediaLibrary: Admin.GetResource("MediaLibrary"),
 		}})
 
@@ -215,27 +212,28 @@ func initWidgets() {
 		})
 
 		type slideImage struct {
-			Title    string
-			SubTitle string
-			Button   string
-			Link     string
-			Image    oss.OSS
+			Value string
 		}
 
 		type slideShowArgument struct {
 			SlideImages []slideImage
 		}
 		slideShowResource := Admin.NewResource(&slideShowArgument{})
-		slideShowResource.AddProcessor(func(value interface{}, metaValues *resource.MetaValues, context *qor.Context) error {
-			if slides, ok := value.(*slideShowArgument); ok {
-				for _, slide := range slides.SlideImages {
-					if slide.Title == "" {
-						return errors.New("slide title is blank")
-					}
-				}
-			}
-			return nil
-		})
+		slideBanners := slideShowResource.Meta(&admin.Meta{Name: "SlideImages"}).Resource
+		slideBanners.Meta(&admin.Meta{Name: "Value", Config: &banner_editor.BannerEditorConfig{
+			MediaLibrary: Admin.GetResource("MediaLibrary"),
+		}})
+
+		// slideShowResource.AddProcessor(func(value interface{}, metaValues *resource.MetaValues, context *qor.Context) error {
+		// 	if slides, ok := value.(*slideShowArgument); ok {
+		// 		for _, slide := range slides.SlideImages {
+		// 			if slide.Title == "" {
+		// 				return errors.New("slide title is blank")
+		// 			}
+		// 		}
+		// 	}
+		// 	return nil
+		// })
 
 		Widgets.RegisterWidget(&widget.Widget{
 			Name:        "SlideShow",
