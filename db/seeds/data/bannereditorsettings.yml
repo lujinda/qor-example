@@ -4,7 +4,7 @@ bannereditorsettings:
       value: '{"Text":"Check the newcomming collection","Color":"#333"}'
     - id: 11
       kind: Add Button
-      value: '{"Text":"view more","Link":"#"}'
+      value: '{"Text":"view more","Link":"/g/men"}'
     - id: 12
       kind: Add Header
       value: '{"Text":"MEN COLLECTION","Color":"#000"}'
@@ -13,13 +13,13 @@ bannereditorsettings:
       value: '{"Text":"Check the newcomming collection","Color":"#333"}'
     - id: 22
       kind: Add Button
-      value: '{"Text":"view more","Link":"#"}'
+      value: '{"Text":"view more","Link":"/g/women"}'
     - id: 23
       kind: Add Header
       value: '{"Text":"WOMEN COLLECTION","Color":"#000"}'
     - id: 31
       kind: Add Button
-      value: '{"Text":"SHOP COLLECTION","Link":"#"}'
+      value: '{"Text":"SHOP COLLECTION","Link":"/products"}'
     - id: 32
       kind: Add Text
       value: '{"Text":"THE STYLE THAT FITS EVERYTHING","Color":"#383838"}'
@@ -28,16 +28,16 @@ bannereditorsettings:
       value: '{"Text":"New Arrivals","Color":"#383838"}'
     - id: 41
       kind: Add Header
-      value: '{"Text":"SHOP COLLECTION","Link":"#"}'
+      value: '{"Text":"SHOP COLLECTION","Link":"/products"}'
     - id: 42
       kind: Add Text
       value: '{"Text":"New look of 2017","Color":"#333"}'
     - id: 43
       kind: Add model buy block
-      value: '{"ProductName":"TOP","Price":"$29.99","ButtonName":"view details","Link":"#"}'
+      value: '{"ProductName":"TOP","Price":"$29.99","ButtonName":"view details","Link":"/products/patterned-top-in-blue_b"}'
     - id: 44
       kind: Add model buy block
-      value: '{"ProductName":"PINK JACKET","Price":"$69.99","ButtonName":"view details","Link":"#"}'
+      value: '{"ProductName":"PINK JACKET","Price":"$69.99","ButtonName":"view details","Link":"/products/crossover-back_w"}'
     - id: 45
       kind: Add Image
       value: '{"Image":{"FileName":"arrow-left.png","Url":"http://qor3.s3.amazonaws.com/medialibrary/arrow-left.png"}}'
@@ -46,7 +46,7 @@ bannereditorsettings:
       value: '{"Image":{"FileName":"arrow-right.png","Url":"http://qor3.s3.amazonaws.com/medialibrary/arrow-right.png"}}'
     - id: 47
       kind: Add model buy block
-      value: '{"ProductName":"BOTTOM","Price":"$32.99","ButtonName":"view details","Link":"#"}'
+      value: '{"ProductName":"BOTTOM","Price":"$32.99","ButtonName":"view details","Link":"/products/white-t-shirt_nvy-bl"}'
     - id: 48
       kind: Add Image
       value: '{"Image":{"FileName":"arrow-right.png","Url":"http://qor3.s3.amazonaws.com/medialibrary/arrow-right.png"}}'
