@@ -227,9 +227,14 @@ products:
             colorcode: 'w'
             images:
                 - url: 'http://qor3.s3.amazonaws.com/products/girl.jpg'
-                - url: 'http://qor3.s3.amazonaws.com/products/girl.jpg'
-                - url: 'http://qor3.s3.amazonaws.com/products/girl.jpg'
-                - url: 'http://qor3.s3.amazonaws.com/products/girl.jpg'
+          - colorname: 'White'
+            colorcode: 'w'
+            images:
+                - url: 'http://qor3.s3.amazonaws.com/products/girl_1.jpg'
+          - colorname: 'White'
+            colorcode: 'w'
+            images:
+                - url: 'http://qor3.s3.amazonaws.com/products/girl_2.jpg'
       sizevariations:
           - sizename: '7 UK'
           - sizename: '8 UK'

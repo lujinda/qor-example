@@ -38,15 +38,15 @@ bannereditorsettings:
     - id: 44
       kind: Add model buy block
       value: '{"ProductName":"PINK JACKET","Price":"$69.99","ButtonName":"view details","Link":"/products/crossover-back_w"}'
+    - id: 47
+      kind: Add model buy block
+      value: '{"ProductName":"BOTTOM","Price":"$32.99","ButtonName":"view details","Link":"/products/white-t-shirt_nvy-bl"}'
     - id: 45
       kind: Add Image
       value: '{"Image":{"FileName":"arrow-left.png","Url":"http://qor3.s3.amazonaws.com/medialibrary/arrow-left.png"}}'
     - id: 46
       kind: Add Image
       value: '{"Image":{"FileName":"arrow-right.png","Url":"http://qor3.s3.amazonaws.com/medialibrary/arrow-right.png"}}'
-    - id: 47
-      kind: Add model buy block
-      value: '{"ProductName":"BOTTOM","Price":"$32.99","ButtonName":"view details","Link":"/products/white-t-shirt_nvy-bl"}'
     - id: 48
       kind: Add Image
       value: '{"Image":{"FileName":"arrow-right.png","Url":"http://qor3.s3.amazonaws.com/medialibrary/arrow-right.png"}}'
