@@ -216,7 +216,8 @@ func initWidgets() {
 		}
 
 		type slideShowArgument struct {
-			SlideImages []slideImage
+			SlideImages       []slideImage
+			SlideImagesSorter sorting.SortableCollection
 		}
 		slideShowResource := Admin.NewResource(&slideShowArgument{})
 		slideBanners := slideShowResource.Meta(&admin.Meta{Name: "SlideImages"}).Resource
