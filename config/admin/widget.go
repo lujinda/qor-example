@@ -128,6 +128,7 @@ func initWidgets() {
 
 		banner_editor.RegisterViewPath("github.com/qor/qor-example/app/views/banner_editor")
 		banner_editor.RegisterElement(&banner_editor.Element{
+			Icon:     "<i class=material-icons>short_text</i>",
 			Name:     "Add Header",
 			Template: "header",
 			Resource: headerRes,
@@ -136,6 +137,7 @@ func initWidgets() {
 			},
 		})
 		banner_editor.RegisterElement(&banner_editor.Element{
+			Icon:     "<i class=material-icons>format_list_bulleted</i>",
 			Name:     "Add model buy block",
 			Template: "model_buy_link",
 			Resource: modelBuyLink,
@@ -144,6 +146,7 @@ func initWidgets() {
 			},
 		})
 		banner_editor.RegisterElement(&banner_editor.Element{
+			Icon:     "<i class=material-icons>format_align_justify</i>",
 			Name:     "Add Text",
 			Template: "text",
 			Resource: textsRes,
@@ -152,6 +155,7 @@ func initWidgets() {
 			},
 		})
 		banner_editor.RegisterElement(&banner_editor.Element{
+			Icon:     "<i class=material-icons>dehaze</i>",
 			Name:     "Add Sub Header",
 			Template: "sub_header",
 			Resource: subHeaderRes,
@@ -160,6 +164,7 @@ func initWidgets() {
 			},
 		})
 		banner_editor.RegisterElement(&banner_editor.Element{
+			Icon:     "<i class=material-icons>view_stream</i>",
 			Name:     "Add Button",
 			Template: "button",
 			Resource: buttonRes,
@@ -169,6 +174,7 @@ func initWidgets() {
 		})
 
 		banner_editor.RegisterElement(&banner_editor.Element{
+			Icon:     "<i class=material-icons>image</i>",
 			Name:     "Add Image",
 			Template: "image",
 			Resource: imageRes,
