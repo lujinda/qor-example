@@ -137,6 +137,11 @@ func init() {
 	})
 	ProductImagesResource.IndexAttrs("File", "Title")
 
+	sport := Admin.AddResource(&models.Sport{}, &admin.Config{Name: "Sports", Priority: 1, Menu: []string{"Product Management"}})
+	sport.IndexAttrs("ID", "Title")
+	sport.EditAttrs("Title")
+	sport.NewAttrs(sport.EditAttrs())
+
 	// Add Product
 	product := Admin.AddResource(&models.Product{}, &admin.Config{Menu: []string{"Product Management"}})
 	product.Meta(&admin.Meta{Name: "Gender", Config: &admin.SelectOneConfig{Collection: Genders, AllowBlank: true}})
@@ -159,7 +164,7 @@ func init() {
 	}})
 	product.Meta(&admin.Meta{Name: "Category", Config: &admin.SelectOneConfig{AllowBlank: true}})
 	product.Meta(&admin.Meta{Name: "Collections", Config: &admin.SelectManyConfig{SelectMode: "bottom_sheet"}})
-
+	product.Meta(&admin.Meta{Name: "Sport", Config: &admin.SelectOneConfig{RemoteDataResource: sport, AllowBlank: false}})
 	product.Meta(&admin.Meta{Name: "MainImage", Config: &media_library.MediaBoxConfig{
 		RemoteDataResource: ProductImagesResource,
 		Max:                1,
@@ -242,6 +247,7 @@ func init() {
 				{"Code", "Price"},
 				{"MainImage"},
 			}},
+		"Sport",
 		&admin.Section{
 			Title: "Organization",
 			Rows: [][]string{

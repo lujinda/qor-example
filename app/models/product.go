@@ -44,6 +44,9 @@ type Product struct {
 	ProductProperties     ProductProperties `sql:"type:text"`
 	Seo                   qor_seo.Setting
 
+	SportID uint
+	Sport   Sport // `gorm:"save_associations:false"`
+
 	Variations []ProductVariation
 
 	publish2.Version

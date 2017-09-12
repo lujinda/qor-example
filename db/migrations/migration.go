@@ -48,6 +48,8 @@ func init() {
 	AutoMigrate(&auth_identity.AuthIdentity{})
 
 	AutoMigrate(&banner_editor.QorBannerEditorSetting{})
+
+	AutoMigrate(&models.Sport{})
 }
 
 func AutoMigrate(values ...interface{}) {
